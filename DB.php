@@ -193,12 +193,4 @@ class DB
     {
         self::$statement->debugDumpParams();
     }
-
-    public static function setSphinx($instance){
-        self::$instance = $instance;
-    }
-
-    public static function setMaster() {
-        self::$instance = self::$masterInstance;
-    }
 }
