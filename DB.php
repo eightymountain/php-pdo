@@ -13,7 +13,6 @@
 class DB
 {
     private static $instance;
-    private static $masterInstance;
     private static $statement;
 
     // PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION //에러출력
@@ -35,9 +34,6 @@ class DB
             } catch (PDOException $e) {
                 die('db connection die: '.$e->getMessage());
             }
-
-            # Master DB 와 sphinx 를 오고가기 위하여 인터페이스 담아두기
-            self::$masterInstance = self::$instance;
         }
 
         return self::$instance;
